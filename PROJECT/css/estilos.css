@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header {
+    background-color: #000;
+    padding: 40px 0;
+}
+
+.site-header h1,
+.site-header p {
+    margin: 0;
+}
+
+.site-header nav ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.site-header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff !important;
+    grid-column: 1 / -1;
+    margin-top: -90px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    padding: 250px;
+    background: url('hero-background.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 2 / 3; /* Proporção de retrato (capa de livro) */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #000000;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;  
+    padding: 20px 0;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
