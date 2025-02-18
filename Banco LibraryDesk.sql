@@ -1,4 +1,4 @@
- -- criação de DB
+-- criação de DB
 create database librarydesk;
 
 -- Uso de DB
@@ -12,19 +12,27 @@ select * from Usuario;
 
 -- Tabela Usuarios
 create table Usuario(
-idusuario int primary key auto_increment,
+id integer not null,
 Nome varchar(100) not null,
-email varchar(50) not null,
-login varchar(50) not null unique,
-senha varchar(50) not null);
+Sexo varchar(10) not null,
+Idade int,
+Email varchar(50) not null,
+Senha varchar(50) not null);
 
+-- Inserir dados
+insert into Usuario (Nome, Sexo, Idade, Email, Senha) values("Giuseppe", "masculino", 26, "giuseppe@gmail.com", "giu1234");
+
+insert into Usuario (Nome, Sexo, Idade, Email, Senha) values("Marcus", "masculino", 21, "nogueira@gmail.com", "nog1234");
+
+insert into Usuario(Nome, Sexo, Idade, Email, Senha) values("Neymar", "masculino", 35, "meninoney@gmail.com", "ney1234");
 
 -- Tabela Livros
+/*
 create table Livros(
 idlivro int primary key auto_increment,
 titulo varchar(100) not null,
 genero varchar(45),
 editora varchar(100),
 autor varchar(100),
-ano_publi date,
 isbn varchar (45));
+*/
