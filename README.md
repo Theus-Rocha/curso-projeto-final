@@ -6,6 +6,22 @@ Desejamos desenvolver um site de avaliação de livros de diversos generos, cujo
 
 Para visitantes comuns, será apenas permitido a navegação pelos tópicos de discussão, livros em destaque e exploração do conteúdo disponível.
 
+telas:
+
+![image](https://github.com/user-attachments/assets/6732bf76-c891-4847-a0bf-5fa93bee2683)
+
+![image](https://github.com/user-attachments/assets/ac4ca3be-6f62-4d11-8db0-7fec1e488791)
+
+![image](https://github.com/user-attachments/assets/3d2c6357-321f-4fb8-bfba-95dd0d4e1c0a)
+
+![image](https://github.com/user-attachments/assets/5a6f2021-60ab-4bcf-99d3-a55010b3649c)
+
+![image](https://github.com/user-attachments/assets/1cfb2a8c-d6b8-47a9-be91-a704e5892981)
+
+![image](https://github.com/user-attachments/assets/b10aabd7-fd55-47b4-bfdc-f101c169579b)
+
+
+
 Banco de dados:
 ```
 -- phpMyAdmin SQL Dump
@@ -184,3 +200,202 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 ```
+
+
+Agora segue o Main do codigo: 
+
+```
+package sLivros;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class Main extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Main frame = new Main();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Main() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 400, 570);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(119, 136, 153));
+		panel.setBounds(10, 11, 364, 507);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Categoria");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Categoria c = new Categoria();
+				c.setVisible(true);
+				
+				
+				
+				
+			}
+		});
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnNewButton.setBounds(137, 94, 89, 40);
+		panel.add(btnNewButton);
+		
+		JButton btnAutor = new JButton("Autor");
+		btnAutor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Autor a = new Autor();
+				a.setVisible(true);
+				
+				
+				
+				
+			}
+		});
+		btnAutor.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnAutor.setBounds(137, 145, 89, 40);
+		panel.add(btnAutor);
+		
+		JButton btnPublisher = new JButton("Editora");
+		btnPublisher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Editora ed = new Editora();
+				ed.setVisible(true);
+				
+				
+				
+				
+			}
+		});
+		btnPublisher.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnPublisher.setBounds(137, 196, 89, 40);
+		panel.add(btnPublisher);
+		
+		JButton btnLivro = new JButton("Livro");
+		btnLivro.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnLivro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Livro l = new Livro();
+				l.setVisible(true);
+				
+				
+			}
+		});
+		btnLivro.setBounds(137, 247, 89, 40);
+		panel.add(btnLivro);
+		
+		JButton btnMembro = new JButton("Membro");
+		btnMembro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Membro m = new Membro();
+				m.setVisible(true);
+				
+			}
+		});
+		btnMembro.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnMembro.setBounds(137, 298, 89, 40);
+		panel.add(btnMembro);
+		
+		JButton btnEdio = new JButton("Edição");
+		btnEdio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				EdLivro  l = new EdLivro();
+				l.setVisible(true);
+				
+				
+				
+				
+			}
+		});
+		btnEdio.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnEdio.setBounds(137, 349, 89, 40);
+		panel.add(btnEdio);
+		
+		JButton btnDevoluo = new JButton("Devolução");
+		btnDevoluo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				RetornoLivro r = new RetornoLivro();
+				r.setVisible(true);
+				
+				
+				
+				
+			}
+		});
+		btnDevoluo.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnDevoluo.setBounds(137, 402, 89, 40);
+		panel.add(btnDevoluo);
+		
+		JButton btnSair = new JButton("Sair");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Login lo = new Login();
+				//this.setVisible(false); O QUE FAZER?????
+				lo.setVisible(true);
+				
+				
+				
+			}
+		});
+		btnSair.setBounds(12, 454, 89, 40);
+		panel.add(btnSair);
+		
+		JLabel lblNewLabel = new JLabel("LibraryDesk");
+		lblNewLabel.setForeground(new Color(0, 0, 0));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		lblNewLabel.setBounds(112, 0, 140, 52);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Gerenciamento");
+		lblNewLabel_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel_1.setBounds(117, 49, 130, 16);
+		panel.add(lblNewLabel_1);
+	}
+}
+
+```
+
+
+
+
