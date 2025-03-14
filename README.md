@@ -1,6 +1,9 @@
 # curso-projeto-final
 Repositório para projeto final do curso de Técnico em Desenvolvimento de Sistemas.
 
+![image](https://github.com/user-attachments/assets/1564c7fd-52df-4e68-9b1f-0a958f9900f3)
+
+
 # Projeto proposto
 Desejamos desenvolver um site de funcionamento de uma livraria, com funções para adcionar, remover e atualizar livros, autores, clientes e tudo que for preciso para a organização de uma livraria.
 
